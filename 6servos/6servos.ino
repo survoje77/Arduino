@@ -69,18 +69,20 @@ void setup() {
 }
  
 void loop() {
-inbase=analogRead(potbase);
-outbase = map(inbase, 0, 1023, minbase, maxbase); // renvoi valeur pot en 0... 180 degrés
-inbras=analogRead(potbras);
-outbras = map(inbras, 0, 1023, minbras, maxbras); // renvoi valeur pot en 0... 180 degrés
-inavantbras=analogRead(potavantbras);
-outavantbras = map(inavantbras, 0, 1023, minavantbras, maxavantbras); // renvoi valeur pot en 0... 180 degrés
-inpoignet=analogRead(potpoignet);
-outpoignet = map(inpoignet, 0, 1023, minpoignet, maxpoignet); // renvoi valeur pot en 0... 180 degrés
-inmain=analogRead(potmain);
-outmain = map(inmain, 0, 1023, minmain, maxmain); // renvoi valeur pot en 0... 180 degrés
-inpince=analogRead(potpince);
-outpince = map(inpince, 0, 1023, minpince, maxpince); // renvoi valeur pot en 0... 180 degrés
+  inbase=analogRead(potbase);
+  outbase = map(inbase, 0, 1023, minbase, maxbase); // renvoi valeur pot en 0... 180 degrés
+  inbras=analogRead(potbras);
+  outbras = map(inbras, 0, 1023, minbras, maxbras); // renvoi valeur pot en 0... 180 degrés
+  inavantbras=analogRead(potavantbras);
+  outavantbras = map(inavantbras, 0, 1023, minavantbras, maxavantbras); // renvoi valeur pot en 0... 180 degrés
+  inpoignet=analogRead(potpoignet);
+  outpoignet = map(inpoignet, 0, 1023, minpoignet, maxpoignet); // renvoi valeur pot en 0... 180 degrés
+  inmain=analogRead(potmain);
+  outmain = map(inmain, 0, 1023, minmain, maxmain); // renvoi valeur pot en 0... 180 degrés
+  inpince=analogRead(potpince);
+  outpince = map(inpince, 0, 1023, minpince, maxpince); // renvoi valeur pot en 0... 180 degrés
+
+// affichage sur moniteur série pour contrôle  
 Serial.println("----------");
 Serial.print(" base : ");Serial.print(inbase);
 Serial.print(" bras : ");Serial.print(inbras);
@@ -103,16 +105,10 @@ Serial.print(" pince : ");Serial.println(outpince);
 //  servopoignet.write(outpoignet);  
 //  servomain.write(outmain);
 //  servopince.write(outpince);
-
-
-
 delay(1000);
-
-
-
 }
 
-
+// TODO régler le problème d'un retour manuel du potentiomètre
 void Servobaseaction(int consigne)
 {
   int position=servobase.read();
