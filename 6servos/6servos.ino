@@ -110,7 +110,7 @@ delay(1000);
 }
 
 // TODO régler le problème d'un retour manuel du potentiomètre
-// placer le while ailleurs (FG 05-04-2022)
+// placer le read ailleurs (FG 05-04-2022)
 void Servobaseaction(int consigne)
 {
   int position=servobase.read();
